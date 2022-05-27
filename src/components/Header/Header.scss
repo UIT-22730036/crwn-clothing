@@ -1,0 +1,23 @@
+.header {
+  height: 5rem;
+  .header__container {
+    padding: 1rem 0;
+    margin: auto;
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .header__container--nav {
+      ul {
+        display: flex;
+        li + li {
+          margin-left: 1rem;
+        }
+      }
+      .shopping-icon {
+        width: 1.5rem;
+        height: 1.5rem;
+      }
+    }
+  }
+}

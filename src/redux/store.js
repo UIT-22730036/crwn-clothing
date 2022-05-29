@@ -2,7 +2,7 @@ import { applyMiddleware, compose, createStore } from "redux";
 import thunk from "redux-thunk";
 import { rootReducer } from "./rootReducer";
 
-const middleWares = [process.env.NODE_ENV === "development" && thunk].filter(
+const middleWares = [process.env.NODE_ENV !== "production" && thunk].filter(
   Boolean
 );
 

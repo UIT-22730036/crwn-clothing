@@ -10,13 +10,18 @@
     .header__container--nav {
       ul {
         display: flex;
+        align-items: center;
+        li {
+          button.sign-out-btn {
+            border: none;
+            outline: none;
+            background-color: transparent;
+            cursor: pointer;
+          }
+        }
         li + li {
           margin-left: 1rem;
         }
-      }
-      .shopping-icon {
-        width: 1.5rem;
-        height: 1.5rem;
       }
     }
   }

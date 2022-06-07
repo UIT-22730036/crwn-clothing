@@ -52,23 +52,6 @@ export const signUserInWithPopup = async () => {
 // Firestore Database
 const db = getFirestore(app);
 
-export const createUserDocumentFormAuth = async (userAuth) => {
-  const userDocRef = doc(db, "users", userAuth.uid);
-  const userSnapshot = await getDoc(userDocRef);
-  if (!userSnapshot.exists()) {
-    const createdAt = new Date();
-    try {
-      await setDoc(userDocRef, {
-        email: userAuth.email,
-        createdAt,
-      });
-    } catch (error) {
-      console.log(error);
-    }
-  }
-  return userDocRef;
-};
-
 export const addCollectionAndDocuments = async (
   collectionKey,
   objectsToAdd

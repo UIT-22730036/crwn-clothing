@@ -4,7 +4,6 @@ import { useNavigate } from "react-router-dom";
 import { setUserInfo } from "../../redux/user/userActions";
 import { localService } from "../../services/localService";
 import {
-  createUserDocumentFormAuth,
   getCollectionAndDocument,
   signUserInWithEmailAndPassword,
   signUserInWithPopup,
@@ -34,7 +33,6 @@ const SignInForm = () => {
     res.then((data) => {
       dispatch(setUserInfo(data.user));
       localService.setUserInfo(data.user);
-      createUserDocumentFormAuth(data.user);
       navigate("/shop");
     });
   };
@@ -47,7 +45,6 @@ const SignInForm = () => {
     res.then((data) => {
       dispatch(setUserInfo(data.user));
       localService.setUserInfo(data.user);
-      createUserDocumentFormAuth(data.user);
       getCollectionAndDocument();
       navigate("/shop");
     });
